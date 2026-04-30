@@ -8,11 +8,10 @@
 - `Pillow` (用于加载和处理图像)
 - `scikit-learn` (用于划分训练集、验证集和测试集，以及计算混淆矩阵)
 - `matplotlib` (用于可视化 Loss/Accuracy 曲线和隐藏层权重)
-- `tqdm` (可选，用于显示进度条)
 
 安装依赖：
 ```bash
-pip install numpy Pillow scikit-learn matplotlib tqdm
+pip install numpy Pillow scikit-learn matplotlib
 ```
 
 ## 文件结构
