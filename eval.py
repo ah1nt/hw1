@@ -1,7 +1,7 @@
 import os
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.metrics import confusion_matrix
+from sklearn.metrics import confusion_matrix, classification_report
 from PIL import Image
 
 def evaluate_model(model, weights, X_test, y_test, classes, save_dir='output'):
@@ -17,6 +17,15 @@ def evaluate_model(model, weights, X_test, y_test, classes, save_dir='output'):
     # Accuracy
     acc = np.mean(preds == y_test)
     print(f"Test Accuracy: {acc:.4f}")
+    
+    # Classification Report (Precision, Recall, F1)
+    report = classification_report(y_test, preds, target_names=classes)
+    print("Classification Report:")
+    print(report)
+    
+    with open(os.path.join(save_dir, 'classification_report.txt'), 'w') as f:
+        f.write(f"Test Accuracy: {acc:.4f}\n\n")
+        f.write(report)
     
     # Confusion Matrix
     cm = confusion_matrix(y_test, preds)
@@ -102,4 +111,6 @@ def error_analysis(X_test, y_test, preds, classes, save_dir='output', num_exampl
         
     plt.tight_layout()
     plt.savefig(os.path.join(save_dir, 'error_analysis.png'))
+    plt.close()
+
     plt.close()
