@@ -24,7 +24,7 @@ pip install numpy Pillow scikit-learn matplotlib
 
 ## 如何运行
 1. **准备数据集**：
-   确保 `EuroSAT_RGB` 文件夹与代码处于同一目录，或在 `main.py` 中修改 `data_dir` 为你的数据集路径。
+   确保 `EuroSAT_RGB` 文件夹与代码处于同一目录，或在 `main.py` 中修改 `data_dir` 为数据集路径。
 
 2. **一键运行完整实验 (训练 + 搜索 + 测试评估)**：
    运行以下命令：
